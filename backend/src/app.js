@@ -1,12 +1,14 @@
 const express = require("express");
+const todoRouter = require("./routes/todoRoute");
 
 const app = express();
-const port = process.env.PORT || 3000;
+
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "hello world!" });
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port:`);
-});
+app.use("/api/v1", todoRouter);
+
+module.exports = app;
