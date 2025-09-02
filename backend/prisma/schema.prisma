@@ -18,7 +18,7 @@ model Todo {
   task      String
   completed Boolean   @default(false)
   createdAt DateTime  @default(now())
-  deleted   Int       @default(0)
+  deleted   Boolean   @default(false)
 }
 
 model User {
@@ -27,5 +27,10 @@ model User {
   name      String
   password  String
   createdAt DateTime  @default(now())
-  deleted   Int       @default(0)
+  deleted   Boolean   @default(false)
+  role      Role      @default(USER)
+}
+enum Role {
+  USER
+  ADMIN
 }

@@ -1,6 +1,6 @@
 const express = require("express");
 const todoController = require("../controllers/todoController");
-const protectedRoute = require("../middlewares/protectedRoute");
+const protectedRoute = require("../middleware/protectedRoute");
 
 const router = express.Router();
 
