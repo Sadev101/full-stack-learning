@@ -9,4 +9,10 @@ router
   .get(protectedRoute, todoController.getAllTodos)
   .post(protectedRoute, todoController.createTodo);
 
+router
+  .route("/todos/:id")
+  .get(protectedRoute, todoController.getTodo)
+  .patch(protectedRoute, todoController.updateTodo)
+  .delete(protectedRoute, todoController.deleteTodo);
+
 module.exports = router;
