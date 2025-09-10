@@ -30,6 +30,7 @@ model User {
   deleted   Boolean   @default(false)
   role      Role      @default(USER)
 }
+
 enum Role {
   USER
   ADMIN
